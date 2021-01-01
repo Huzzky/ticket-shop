@@ -1,4 +1,4 @@
-import ticketsReducer from '../reducers/ticketsReducers'
+import ticketsReducer from '../reducers/ticketsReducer'
 
 import { applyMiddleware, createStore, combineReducers } from 'redux'
 
@@ -9,4 +9,4 @@ const allReducers = combineReducers({
   ticketsReducer,
 })
 
-export const store = createStore(allReducers, applyMiddleware(logger, thunk))
+export const store = createStore(allReducers, applyMiddleware(thunk, logger))

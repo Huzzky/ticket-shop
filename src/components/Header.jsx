@@ -1,20 +1,13 @@
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { useEffect } from 'react'
+import { memo } from 'react'
+import '../assets/_header.scss'
 
-const Header = ({ data }) => {
-  useEffect(() => {
-    console.log(data)
-  }, [data])
-  return <div></div>
+const Header = () => {
+  return (
+    <div className="header">
+      <h1 className="header__logo">Logo</h1>
+      <h3 className="header__basket">Basket</h3>
+    </div>
+  )
 }
 
-Header.propTypes = {
-  data: PropTypes.array,
-}
-
-const mapStoreToProps = ({ ticketsReducer }) => ({
-  data: ticketsReducer.data,
-})
-
-export default connect(mapStoreToProps)(Header)
+export default memo(Header)

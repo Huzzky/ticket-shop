@@ -1,22 +1,16 @@
-import { useEffect } from 'react'
-import { connect } from 'react-redux'
-import { getDataFromApi } from './actions/fetchTicketsDataAction'
 import './App.css'
+import BoostEvents from './components/BoostEvents'
 import Header from './components/Header'
+import SearchBar from './components/SearchBar.jsx'
 
-function App({ getDataFromApi }) {
-  useEffect(() => {
-    getDataFromApi(10)
-  }, [getDataFromApi])
+const App = () => {
   return (
     <div className="App">
       <Header />
+      <SearchBar />
+      <BoostEvents />
     </div>
   )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  getDataFromApi: (rows) => dispatch(getDataFromApi(rows)),
-})
-
-export default connect(null, mapDispatchToProps)(App)
+export default App

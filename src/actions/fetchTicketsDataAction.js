@@ -5,23 +5,25 @@ import {
   SUCCESS_DATA_TICKETS,
 } from '../const/const'
 
-const getDataFromApi = (rows) => {
+const getDataFromApi = () => {
   return (dispatch) => {
     dispatch({
       type: REQUEST_DATA_TICKETS,
     })
-    fetchData({ rows })
-      .then((data) => {
-        dispatch({
-          type: SUCCESS_DATA_TICKETS,
-          data,
+    setTimeout(() => {
+      fetchData()
+        .then((data) => {
+          dispatch({
+            type: SUCCESS_DATA_TICKETS,
+            data,
+          })
         })
-      })
-      .catch((_) => {
-        dispatch({
-          type: ERROR_REQUEST,
+        .catch((_) => {
+          dispatch({
+            type: ERROR_REQUEST,
+          })
         })
-      })
+    }, 2000)
   }
 }
 
