@@ -1,0 +1,24 @@
+.events {
+    padding-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+
+    &__card {
+        border: 1px solid white;
+        background-color: aliceblue;
+    }
+    
+    .card {
+        &__title {
+            color:black;
+        }
+        &__smallest-price {
+            color: black;
+        }
+        &__img-class {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
